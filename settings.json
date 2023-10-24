@@ -1,0 +1,350 @@
+// https://code.visualstudio.com/docs/getstarted/settings
+// https://code.visualstudio.com/docs/editor/extension-marketplace#_where-are-extensions-installed
+// https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf
+// https://code.visualstudio.com/docs/getstarted/keybindings
+{
+  // VSCODE SETTINGS
+  "telemetry.enableCrashReporter": false, // 给 Microsoft 发送故障报表
+  "telemetry.enableTelemetry": false, // 给 Microsoft 发送使用情况数据和错误
+  "extensions.ignoreRecommendations": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "gitlens.defaultDateFormat": null,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "outline.showVariables": false,
+  "remote.SSH.useLocalServer": false,
+  "search.useIgnoreFiles": false,
+  "vim.useSystemClipboard": true,
+  "vim.ignorecase": false,
+  "explorer.sortOrder": "type",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  // https://marketplace.visualstudio.com/items?itemName=iocave.customize-ui
+  // 字体
+  "customizeUI.font.regular": "Input",
+  "customizeUI.font.monospace": "Input",
+  "customizeUI.listRowHeight": 22,
+  "customizeUI.fontSizeMap": {
+    "tab-title": "15px", // editor tab titles
+  },
+  // 窗口标题
+  "customizeUI.titleBar": "inline",
+  "window.titleBarStyle": "native",
+  // 左侧图标
+  "customizeUI.activityBar": "bottom",
+  "customizeUI.activityBarHideSettings": true,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "Input, 'JetBrains Mono Thin', 'Input Mono', 'FiraCode NF', 'FiraCode Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 15,
+  "editor.lineHeight": 1.7,
+  "editor.lineNumbers": "relative",
+  "editor.accessibilitySupport": "off",
+  "editor.formatOnSave": false,
+  "files.autoSave": "onWindowChange",
+  "files.trimFinalNewlines": true,
+  "files.associations": {
+    // django
+    "**/settings.py": "python",
+    // jinja
+    "**/tpls/*.html": "jinja",
+    "**/templates/**/*.html": "jinja",
+    "**/*.raml": "yaml",
+  },
+  "files.exclude": {
+    "**/__pycache__/": true,
+    "**/.idea/": true,
+    "**/.vscode/": true,
+    "**/*.py[cod]": true,
+    "**/*.egg-info/": true
+  },
+  "files.watcherExclude": {
+    "**/.git/**": true,
+    "**/node_modules/**": true,
+    "log/*": true,
+  },
+  "workbench.editor.showIcons": true,
+  "workbench.settings.editor": "json",
+  "workbench.statusBar.visible": true,
+  "workbench.panel.defaultLocation": "right",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Everforest Dark",
+  // https://code.visualstudio.com/api/references/theme-color#editor-colors
+  "workbench.colorCustomizations": {
+    "terminalCursor.foreground": "#909",
+    "editorCursor.foreground": "#cc0",
+    "editor.wordHighlightBackground": "#135564",
+    "editor.selectionBackground": "#135564",
+    "editor.selectionHighlightBackground": "#666",
+    "editorRuler.foreground": "#996",
+    "editorError.foreground": "#f60",
+    // "editorWarning.foreground": "#cc0",
+    "editorWarning.foreground": "#09f",
+  },
+  // https://www.nicoespeon.com/en/2020/01/change-vscode-preview-files/
+  "workbench.editor.enablePreview": true,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.startupEditor": "none",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "terminal.integrated.automationShell.osx": "/bin/bash",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.macOptionIsMeta": true,
+  // https://github.com/pypa/virtualenv/issues/480
+  // https://github.com/microsoft/vscode-python/issues/8341
+  "terminal.integrated.inheritEnv": false,
+  "terminal.integrated.fontFamily": "Input, Menlo, Monaco, monospace",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  // Golang
+  // https://marketplace.visualstudio.com/items?itemName=ms-vscode.Go
+  "go.useLanguageServer": true,
+  // definition not found: https://github.com/golang/go/issues/32608#issuecomment-501840443
+  // "go.languageServerFlags": [
+  //   "-rpc.trace",
+  // ],
+  "go.formatTool": "goimports",
+  // brew install golangci/tap/golangci-lint
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": [
+    "--enable-all",
+    "--new",
+  ],
+  "go.toolsManagement.autoUpdate": true,
+  "go.addTags": {
+    "tags": "json",
+    "options": ""
+  },
+  "gopls": {
+    "ui.semanticTokens": true
+  },
+  // https://github.com/golang/tools/blob/master/gopls/doc/vscode.md
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true,
+    },
+    // Optional: Disable snippets, as they conflict with completion ranking.
+    "editor.snippetSuggestions": "none",
+  },
+  "[go.mod]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true,
+    },
+  },
+  // Rust
+  "[rust]": {
+    "editor.formatOnSave": false
+  },
+  // Python
+  // Python 有 black、isort、autoflake 三个格式化相关的工具，isort 可以和 black 兼容，autoflake 用于删掉未用到的导入和变量
+  "editor.rulers": [
+    120
+  ],
+  "[python]": {
+    "editor.formatOnSave": true,
+  },
+  // https://code.visualstudio.com/docs/python/settings-reference
+  "python.languageServer": "Pylance",
+  "editor.acceptSuggestionOnEnter": "on",
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/usr/local/bin/black",
+  "python.formatting.blackArgs": [
+    "-S",
+    "-l",
+    "120",
+    "--force-exclude",
+    "/migrations/"
+  ],
+  // line width of sorting imports: https://code.visualstudio.com/docs/python/editing#_sort-imports
+  "python.sortImports.path": "/usr/local/bin/isort",
+  "python.sortImports.args": [
+    "--atomic",
+    "--profile",
+    "black",
+    "-w",
+    "120",
+    "--src",
+    "${workspaceFolder}"
+  ],
+  // "python.linting.flake8Enabled": true,
+  // "python.linting.flake8Path": "/usr/local/bin/flake8",
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintPath": "/usr/local/bin/pylint",
+  // https://pylint.pycqa.org/en/stable/user_guide/checkers/features.html
+  "python.linting.pylintArgs": [
+    "--enable=W0614",
+    "--disable=C0115,C0116"
+  ],
+  // https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-extension-pack
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  // PYTHONPATH: https://stackoverflow.com/questions/53653083/how-to-correctly-set-pythonpath-for-visual-studio-code
+  "terminal.integrated.env.osx": {
+    "PYTHONPATH": "${workspaceFolder}/..:${env:PYTHONPATH}"
+  },
+  "python.defaultInterpreterPath": "/usr/local/bin/python3",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/..", // 支持从当前项目根目录导入
+  ],
+  "python.autoComplete.extraPaths": [
+    "${workspaceFolder}/..",
+  ],
+  // https://marketplace.visualstudio.com/items?itemName=edonet.vscode-command-runner
+  "command-runner.commands": {
+    "python-remove-unused": "autoflake --in-place --remove-unused-variables --remove-all-unused-imports ${file}"
+  },
+  // https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight
+  "todohighlight.defaultStyle": {
+    "color": "orange",
+    "backgroundColor": "rgb(0,0,0,0)",
+  },
+  "todohighlight.keywords": [
+    {
+      "text": "TODO:",
+      "color": "#ffbd2a",
+      "backgroundColor": "#333",
+    },
+    {
+      "text": "FIXME:",
+      "color": "#f06292",
+      "backgroundColor": "#333",
+    },
+    {
+      "text": "raise",
+      "color": "orange",
+    },
+    {
+      "text": "return ",
+      "color": "#00cc00",
+    },
+    {
+      "text": "self",
+      "backgroundColor": "#233"
+    },
+  ],
+  // Debug in Python: https://code.visualstudio.com/docs/python/debugging
+  // HTML
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  // JavaScript
+  // https://code.visualstudio.com/docs/nodejs/working-with-javascript
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // TypeScript
+  // https://code.visualstudio.com/docs/typescript/typescript-tutorial
+  // TODO
+  // Prettier
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.arrowParens": "avoid",
+  "prettier.bracketSpacing": false,
+  "prettier.endOfLine": "lf",
+  "prettier.jsxSingleQuote": true,
+  "prettier.packageManager": "yarn",
+  "prettier.printWidth": 80,
+  "prettier.proseWrap": "preserve",
+  "prettier.quoteProps": "as-needed",
+  "prettier.requireConfig": false,
+  "prettier.resolveGlobalModules": false,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 2,
+  "prettier.trailingComma": "all",
+  // Whether or not to take `.editorconfig` into account when parsing configuration
+  "prettier.useEditorConfig": true,
+  "prettier.useTabs": false,
+  "prettier.vueIndentScriptAndStyle": false,
+  "prettier.withNodeModules": false,
+  // JSON
+  // https://code.visualstudio.com/docs/languages/json
+  // https://github.com/json-schema-org/json-schema-spec/blob/draft-04/schema.json
+  "[json]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "vscode.json-language-features",
+    // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[jsonc]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "fixJson.indentationSpaces": 2,
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/.babelrc"
+      ],
+      "url": "http://json.schemastore.org/babelrc"
+    },
+    {
+      "fileMatch": [
+        "/dist/**/*.json"
+      ],
+      "url": "https://json-schema.org/draft-04/schema"
+    }
+  ],
+  // YAML
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  // https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml
+  "yaml.schemas": {
+    // RAML TODO
+  },
+  "redhat.telemetry.enabled": false,
+  // CSV
+  "csv-edit.readOption_hasHeader": "true",
+  // PLAIN
+  "[plain]": {
+    "editor.formatOnSave": false
+  },
+  // Extension settings
+  // https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks
+  "bookmarks.sideBar.expanded": true,
+  "cSpell.userWords": [
+    "aiohttp",
+    "aiozmq",
+    "binlog",
+    "bitcom",
+    "datatypes",
+    "Exif",
+    "gorm",
+    "Infof",
+    "keepalive",
+    "kline",
+    "klines",
+    "minio",
+    "msgpack",
+    "orderbook",
+    "perp",
+    "pytz",
+    "Usdx",
+    "uvloop",
+    "websockets",
+    "zerorpc"
+  ],
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.inlineSuggest.enabled": true,
+  "remote.SSH.remotePlatform": {
+    "sz": "linux",
+    "magicbox-local": "linux",
+    "magicbox-local-root": "linux"
+  },
+  "update.mode": "manual", // the latest workable version for CustomUI is 1.73.1
+  // AI
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+}

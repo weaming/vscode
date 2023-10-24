@@ -1,0 +1,95 @@
+// Place your key bindings in this file to override the defaults
+[
+  /*
+  Other useful keybindings:
+    Golang:
+      Cmd + F12: Peek interface implementations
+  */
+  {
+    "key": "alt+cmd+o",
+    "command": "python.sortImports",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+1",
+    "command": "workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  {
+    "key": "cmd+2",
+    "command": "outline.focus"
+  },
+  // https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks
+  {
+    "key": "cmd+3",
+    "command": "bookmarksExplorer.focus"
+  },
+  {
+    "key": "f3",
+    "command": "bookmarks.toggle",
+    "when": "editorFocus"
+  },
+  {
+    "key": "f4",
+    "command": "bookmarks.listFromAllFiles"
+  },
+  {
+    "key": "cmd+4",
+    "command": "workbench.view.extension.references-view"
+  },
+  {
+    "key": "cmd+5",
+    "command": "workbench.view.scm",
+  },
+  {
+    "key": "cmd+6",
+    "command": "workbench.view.extension.gitlab-workflow"
+  },
+  {
+    "key": "cmd+7",
+    "command": "gitlens.openFileInRemote"
+  },
+  {
+    "key": "cmd+8",
+    "command": "vscode-chatgpt.view.focus",
+  },
+  {
+    "key": "ctrl+h",
+    "command": "references-view.showCallHierarchy",
+    "when": "editorHasCallHierarchyProvider && editorTextFocus && !inReferenceSearchEditor"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "references-view.findReferences",
+    "when": "editorHasReferenceProvider"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "goToPreviousReference",
+    "when": "inReferenceSearchEditor || referenceSearchVisible"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "goToNextReference",
+    "when": "inReferenceSearchEditor || referenceSearchVisible"
+  },
+  {
+    "key": "cmd+enter",
+    "command": "workbench.action.keepEditor",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+i",
+    "command": "editor.action.showDefinitionPreviewHover",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+shift+\\",
+    "command": "workbench.action.splitEditorDown",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "merge.goToNextUnhandledConflict",
+  },
+]
